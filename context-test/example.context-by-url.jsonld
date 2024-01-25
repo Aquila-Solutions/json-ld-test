@@ -1,5 +1,5 @@
 {
-    "@context": "https://raw.githubusercontent.com/Aquila-Solutions/json-ld-test/main/context-test/context.jsonld",
+    "@context": "https://www.aquila-solutions.dev/context-test/context.jsonld",
     "@id": "embedded",
     "label": "Just a simple document"
 }
