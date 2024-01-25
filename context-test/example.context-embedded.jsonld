@@ -3,6 +3,6 @@
         "label": "http://www.w3.org/2000/01/rdf-schema#label",
         "@base": "http://example.com/"
     },
-    "@id": "embedded",
+    "@id": "document-id",
     "label": "Just a simple document"
 }

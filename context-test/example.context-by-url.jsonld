@@ -1,5 +1,5 @@
 {
     "@context": "https://www.aquila-solutions.dev/context-test/context.jsonld",
-    "@id": "embedded",
+    "@id": "document-id",
     "label": "Just a simple document"
 }
