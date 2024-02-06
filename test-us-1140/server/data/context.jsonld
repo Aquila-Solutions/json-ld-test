@@ -1,0 +1,15 @@
+{
+  "@context": {
+    "@vocab": "https://example.com/",
+    "id": "@id",
+    "type": "@type",
+    "modified": {
+      "@id": "http://purl.org/dc/terms/modified",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "isVersionOf": {
+      "@id": "http://purl.org/dc/terms/isVersionOf",
+      "@type": "@id"
+    }
+  }
+}

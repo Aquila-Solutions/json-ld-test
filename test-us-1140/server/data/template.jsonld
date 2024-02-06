@@ -1,0 +1,7 @@
+  {
+    "@context": "https://webhook.site/720eeb98-3440-430d-9250-8d0adde7117c",
+    "id": "https://example.com/{{index}}#{{timestamp}}",
+    "type": "offStreetParkingGround",
+    "modified": "{{timestamp}}",
+    "isVersionOf": "https://example.com/{{index}}"
+  }

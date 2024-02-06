@@ -1,0 +1,8 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://ldes-mongodb/server-json-ld-caching
+      auto-index-creation: true
+
+ldes-server:
+  host-name: http://localhost:9003

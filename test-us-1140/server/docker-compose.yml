@@ -1,0 +1,43 @@
+version: '2.0'
+
+networks:
+  server-json-ld-caching:
+    name: server-json-ld-caching_ldes-network
+
+services:
+
+  ldes-server:
+    container_name: server-json-ld-caching_ldes-server
+    image: ghcr.io/informatievlaanderen/ldes-server:latest
+    volumes:
+      - ./config/application.yml:/application.yml:ro
+    ports:
+      - 9003:8080
+    networks:
+      - server-json-ld-caching
+    depends_on:
+      - ldes-mongodb
+
+  ldes-mongodb:
+    container_name: server-json-ld-caching_ldes-mongodb
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    networks:
+      - server-json-ld-caching
+
+  test-message-generator:
+    container_name: server-json-ld-caching_test-message-generator
+    image: ghcr.io/informatievlaanderen/test-message-generator:latest
+    environment:
+      - TARGETURL=http://ldes-server:8080/collection
+      - SILENT=false
+      - CRON=* * * * * *
+      - TEMPLATEFILE=/tmp/data/template.jsonld
+      - MIMETYPE=application/ld+json
+    volumes:
+      - ./data/template.jsonld:/tmp/data/template.jsonld:ro
+    networks:
+      - server-json-ld-caching
+    profiles:
+      - delay-started
